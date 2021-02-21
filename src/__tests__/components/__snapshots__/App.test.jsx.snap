@@ -7,22 +7,19 @@ exports[`App rendering should render simple todo list 1`] = `
   <h1>
     TODO List
   </h1>
-  <ol>
-    <li
-      key="todo-0"
-    >
-      todo text 1
-    </li>
-    <li
-      key="todo-1"
-    >
-      todo text 2
-    </li>
-    <li
-      key="todo-2"
-    >
-      todo text 3
-    </li>
-  </ol>
+  <TodoList
+    items={
+      Array [
+        Object {
+          "content": "todo text 1",
+          "id": "1",
+        },
+        Object {
+          "content": "todo text 2",
+          "id": "2",
+        },
+      ]
+    }
+  />
 </div>
 `;

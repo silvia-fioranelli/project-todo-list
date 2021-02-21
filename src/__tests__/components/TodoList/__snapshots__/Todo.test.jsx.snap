@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo rendering should render item 1`] = `
+<div>
+  mock content
+</div>
+`;

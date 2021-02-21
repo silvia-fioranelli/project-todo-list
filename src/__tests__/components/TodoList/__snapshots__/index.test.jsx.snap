@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList rendering should render items 1`] = `
+<div>
+  <ol>
+    <li
+      key="todo-id 1"
+    >
+      <Todo
+        item={
+          Object {
+            "content": "mock 1",
+            "id": "id 1",
+          }
+        }
+      />
+    </li>
+    <li
+      key="todo-id 2"
+    >
+      <Todo
+        item={
+          Object {
+            "content": "mock 2",
+            "id": "id 2",
+          }
+        }
+      />
+    </li>
+  </ol>
+</div>
+`;
