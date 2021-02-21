@@ -1,17 +1,38 @@
+import { Component } from 'react';
+import Form from './Form';
 import TodoList from './TodoList';
 
-function App() {
-  const todos = [
-    { id: '1', content: 'todo text 1' },
-    { id: '2', content: 'todo text 2' },
-  ];
+// temp global ID
+let id = 0;
 
-  return (
-    <div className="container">
-      <h1>TODO List</h1>
-      <TodoList items={todos} />
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [],
+    };
+  }
+
+  handleOnSubmit = (content) => {
+    const todo = {
+      content,
+      id: String(++id),
+    };
+    const todos = this.state.todos.concat(todo);
+    this.setState({ todos });
+  };
+
+  render() {
+    const { todos } = this.state;
+
+    return (
+      <div className="container">
+        <h1>TODO List</h1>
+        <Form onSubmit={this.handleOnSubmit} />
+        <TodoList items={todos} />
+      </div>
+    );
+  }
 }
 
 export default App;

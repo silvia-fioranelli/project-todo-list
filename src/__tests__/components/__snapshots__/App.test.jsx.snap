@@ -7,19 +7,11 @@ exports[`App rendering should render simple todo list 1`] = `
   <h1>
     TODO List
   </h1>
+  <Form
+    onSubmit={[Function]}
+  />
   <TodoList
-    items={
-      Array [
-        Object {
-          "content": "todo text 1",
-          "id": "1",
-        },
-        Object {
-          "content": "todo text 2",
-          "id": "2",
-        },
-      ]
-    }
+    items={Array []}
   />
 </div>
 `;
