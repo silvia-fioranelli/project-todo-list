@@ -38,7 +38,7 @@ export class Form extends Component {
       <form>
         <div className="input-group mb-3">
           <input
-            placeholder="Add todo here"
+            placeholder="write a reminder..."
             value={inputText}
             type="text"
             onChange={this.handleChange}

@@ -6,13 +6,9 @@ const TodoList = (props) => {
 
   return (
     <div>
-      <ol>
-        {items.map((item) => (
-          <li key={`todo-${item.id}`}>
-            <Todo item={item} />
-          </li>
-        ))}
-      </ol>
+      {items.map((item) => (
+        <Todo key={`todo-${item.id}`} item={item} />
+      ))}
     </div>
   );
 };

@@ -4,15 +4,31 @@ import { Todo, mapDispatch } from '../../../components/TodoList/Todo';
 describe('Todo', () => {
   const defaultProps = {
     deleteTodo: jest.fn(),
-    item: { content: 'mock content', id: 'mock id' },
+    item: {
+      completed: false,
+      content: 'mock content',
+      id: 'mock id'
+    },
     toggleTodo: jest.fn(),
   };
 
   const render = (props) => shallow(<Todo {...defaultProps} {...props} />);
 
   describe('rendering', () => {
-    test('should render item', () => {
+    test('should render item, pending', () => {
       const wrapper = render();
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    test('should render item, completed', () => {
+      const props = {
+        item: {
+          completed: true,
+          content: 'mock content',
+          id: 'mock id'
+        }
+      }
+      const wrapper = render(props);
       expect(wrapper).toMatchSnapshot();
     });
   });

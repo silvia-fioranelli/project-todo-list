@@ -7,7 +7,7 @@ exports[`Form rendering should render text form 1`] = `
   >
     <input
       onChange={[Function]}
-      placeholder="Add todo here"
+      placeholder="write a reminder..."
       type="text"
       value=""
     />

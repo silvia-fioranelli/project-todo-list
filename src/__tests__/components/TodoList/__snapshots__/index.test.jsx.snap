@@ -2,31 +2,23 @@
 
 exports[`TodoList rendering should render items 1`] = `
 <div>
-  <ol>
-    <li
-      key="todo-id 1"
-    >
-      <Connect(Todo)
-        item={
-          Object {
-            "content": "mock 1",
-            "id": "id 1",
-          }
-        }
-      />
-    </li>
-    <li
-      key="todo-id 2"
-    >
-      <Connect(Todo)
-        item={
-          Object {
-            "content": "mock 2",
-            "id": "id 2",
-          }
-        }
-      />
-    </li>
-  </ol>
+  <Connect(Todo)
+    item={
+      Object {
+        "content": "mock 1",
+        "id": "id 1",
+      }
+    }
+    key="todo-id 1"
+  />
+  <Connect(Todo)
+    item={
+      Object {
+        "content": "mock 2",
+        "id": "id 2",
+      }
+    }
+    key="todo-id 2"
+  />
 </div>
 `;
