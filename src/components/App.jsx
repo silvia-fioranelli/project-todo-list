@@ -15,6 +15,26 @@ class App extends Component {
     };
   }
 
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter((todo) => todo.id !== id);
+    this.setState({ todos });
+  };
+
+  toggleTodo = (id) => {
+    const todos = this.state.todos.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+
+      return todo;
+    });
+
+    this.setState({ todos });
+  };
+
   handleOnSubmit = (content) => {
     const todo = {
       content,
@@ -56,7 +76,11 @@ class App extends Component {
         <h1>TODO List</h1>
         <Form onSubmit={this.handleOnSubmit} />
         <Filter setCategory={this.setCategory} />
-        <TodoList items={todos} />
+        <TodoList
+          items={todos}
+          deleteTodo={this.deleteTodo}
+          toggleTodo={this.toggleTodo}
+        />
       </div>
     );
   }

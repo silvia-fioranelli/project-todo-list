@@ -14,7 +14,9 @@ exports[`App rendering should render simple todo list 1`] = `
     setCategory={[Function]}
   />
   <TodoList
+    deleteTodo={[Function]}
     items={Array []}
+    toggleTodo={[Function]}
   />
 </div>
 `;

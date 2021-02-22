@@ -10,6 +10,36 @@ describe('App', () => {
   });
 
   describe('callbacks', () => {
+    test('deteleTodo should remove todo', () => {
+      const todos = [
+        { id: '1', completed: false },
+        { id: '2', completed: false },
+      ];
+      const wrapper = shallow(<App />);
+      wrapper.setState({ todos });
+      wrapper.instance().deleteTodo('1');
+
+      expect(wrapper.instance().state.todos).toEqual([todos[1]])
+    });
+
+    test('toggleTodo should toggle todo', () => {
+      const todos = [
+        { id: '1', completed: false },
+        { id: '2', completed: false },
+      ];
+      const wrapper = shallow(<App />);
+      wrapper.setState({ todos });
+      wrapper.instance().toggleTodo('1');
+
+      expect(wrapper.instance().state.todos[0]).toEqual({
+        completed: true,
+        id: '1'
+      })
+
+      wrapper.instance().toggleTodo('1');
+      expect(wrapper.instance().state.todos).toEqual(todos)
+    });
+
     test('handleOnSubmit should add todo', () => {
       const wrapper = shallow(<App />);
       wrapper.instance().handleOnSubmit('mock');

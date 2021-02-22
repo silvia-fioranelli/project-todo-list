@@ -2,6 +2,18 @@
 
 exports[`Todo rendering should render item 1`] = `
 <div>
-  mock content
+  <button
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Toggle
+  </button>
+  <p>
+    mock content
+  </p>
 </div>
 `;
