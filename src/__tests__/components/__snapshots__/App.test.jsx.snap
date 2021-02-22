@@ -10,6 +10,9 @@ exports[`App rendering should render simple todo list 1`] = `
   <Form
     onSubmit={[Function]}
   />
+  <Filter
+    setCategory={[Function]}
+  />
   <TodoList
     items={Array []}
   />

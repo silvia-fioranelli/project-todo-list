@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter rendering should render 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    ALL
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Pending
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Completed
+  </button>
+</div>
+`;
