@@ -6,29 +6,25 @@ exports[`TodoList rendering should render items 1`] = `
     <li
       key="todo-id 1"
     >
-      <Todo
-        deleteTodo={[MockFunction]}
+      <Connect(Todo)
         item={
           Object {
             "content": "mock 1",
             "id": "id 1",
           }
         }
-        toggleTodo={[MockFunction]}
       />
     </li>
     <li
       key="todo-id 2"
     >
-      <Todo
-        deleteTodo={[MockFunction]}
+      <Connect(Todo)
         item={
           Object {
             "content": "mock 2",
             "id": "id 2",
           }
         }
-        toggleTodo={[MockFunction]}
       />
     </li>
   </ol>

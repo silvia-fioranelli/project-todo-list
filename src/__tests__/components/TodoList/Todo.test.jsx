@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import Todo from '../../../components/TodoList/Todo';
+import { Todo, mapDispatch } from '../../../components/TodoList/Todo';
 
 describe('Todo', () => {
   const defaultProps = {
@@ -36,6 +36,13 @@ describe('Todo', () => {
       wrapper.find('button').at(0).simulate('click');
       expect(props.deleteTodo).toBeCalledTimes(1);
       expect(props.deleteTodo).toBeCalledWith(defaultProps.item.id);
+    });
+  });
+
+  describe('mapDispatch', () => {
+    test('should inject props', () => {
+      expect(mapDispatch).toHaveProperty('deleteTodo');
+      expect(mapDispatch).toHaveProperty('toggleTodo');
     });
   });
 });

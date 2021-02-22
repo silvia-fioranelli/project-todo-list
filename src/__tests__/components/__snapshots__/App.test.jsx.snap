@@ -7,16 +7,10 @@ exports[`App rendering should render simple todo list 1`] = `
   <h1>
     TODO List
   </h1>
-  <Form
-    onSubmit={[Function]}
-  />
-  <Filter
-    setCategory={[Function]}
-  />
+  <Connect(Form) />
+  <Connect(Filter) />
   <TodoList
-    deleteTodo={[Function]}
     items={Array []}
-    toggleTodo={[Function]}
   />
 </div>
 `;

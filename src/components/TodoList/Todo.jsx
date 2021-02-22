@@ -1,6 +1,11 @@
 import { func, shape, string } from 'prop-types';
+import { connect } from 'react-redux';
+import {
+  deleteTodo as deleteTodoAlias,
+  toggleTodo as toggleTodoAlias,
+} from '../../actions';
 
-const Todo = (props) => {
+export const Todo = (props) => {
   const { item, toggleTodo, deleteTodo } = props;
 
   return (
@@ -20,4 +25,9 @@ Todo.propTypes = {
   }),
 };
 
-export default Todo;
+export const mapDispatch = {
+  deleteTodo: deleteTodoAlias,
+  toggleTodo: toggleTodoAlias,
+};
+
+export default connect(null, mapDispatch)(Todo);

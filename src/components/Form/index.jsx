@@ -1,7 +1,9 @@
 import { func } from 'prop-types';
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import { addTodo } from '../../actions';
 
-class Form extends Component {
+export class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,9 +22,9 @@ class Form extends Component {
 
     const { onSubmit } = this.props;
     const { inputText } = this.state;
-    
+
     if (!inputText) return;
-    
+
     onSubmit(inputText);
     this.setState({
       inputText: '',
@@ -46,8 +48,12 @@ class Form extends Component {
   }
 }
 
+export const mapDispatch = {
+  onSubmit: addTodo,
+};
+
 Form.propTypes = {
   onSubmit: func.isRequired,
 };
 
-export default Form;
+export default connect(null, mapDispatch)(Form);

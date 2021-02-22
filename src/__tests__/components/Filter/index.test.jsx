@@ -1,5 +1,10 @@
 import { shallow } from 'enzyme';
-import Filter from '../../../components/Filter';
+import { Filter, mapDispatch } from '../../../components/Filter';
+import {
+  CATEGORY_ALL,
+  CATEGORY_COMPLETED,
+  CATEGORY_PENDING,
+} from '../../../globals';
 
 describe('Filter', () => {
   describe('rendering', () => {
@@ -20,7 +25,7 @@ describe('Filter', () => {
       const wrapper = shallow(<Filter {...props} />);
       wrapper.find('button').at(0).simulate('click');
       expect(props.setCategory).toBeCalledTimes(1);
-      expect(props.setCategory).toBeCalledWith('');
+      expect(props.setCategory).toBeCalledWith(CATEGORY_ALL);
     });
 
     test('should set filter type with pending', () => {
@@ -30,7 +35,7 @@ describe('Filter', () => {
       const wrapper = shallow(<Filter {...props} />);
       wrapper.find('button').at(1).simulate('click');
       expect(props.setCategory).toBeCalledTimes(1);
-      expect(props.setCategory).toBeCalledWith('pending');
+      expect(props.setCategory).toBeCalledWith(CATEGORY_PENDING);
     });
 
     test('should set filter type with completed', () => {
@@ -40,7 +45,13 @@ describe('Filter', () => {
       const wrapper = shallow(<Filter {...props} />);
       wrapper.find('button').at(2).simulate('click');
       expect(props.setCategory).toBeCalledTimes(1);
-      expect(props.setCategory).toBeCalledWith('completed');
+      expect(props.setCategory).toBeCalledWith(CATEGORY_COMPLETED);
+    });
+  });
+
+  describe('mapDispatch', () => {
+    test('should inject props', () => {
+      expect(mapDispatch).toHaveProperty('setCategory');
     });
   });
 });
