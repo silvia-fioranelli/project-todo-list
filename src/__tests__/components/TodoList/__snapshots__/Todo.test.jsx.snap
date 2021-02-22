@@ -3,17 +3,25 @@
 exports[`Todo rendering should render item 1`] = `
 <div>
   <button
+    className="btn btn-danger btn-sm mt-1 mr-1"
     onClick={[Function]}
   >
     Delete
   </button>
   <button
+    className="btn btn-success btn-sm mt-1 mr-3"
     onClick={[Function]}
   >
     Toggle
   </button>
-  <p>
+  <span
+    style={
+      Object {
+        "textDecoration": "",
+      }
+    }
+  >
     mock content
-  </p>
+  </span>
 </div>
 `;
