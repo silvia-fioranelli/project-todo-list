@@ -36,13 +36,22 @@ export class Form extends Component {
 
     return (
       <form>
-        <input
-          label="Add todo"
-          value={inputText}
-          type="text"
-          onChange={this.handleChange}
-        />
-        <button onClick={this.handleSubmit}>Add</button>
+        <div className="input-group mb-3">
+          <input
+            placeholder="write a reminder..."
+            value={inputText}
+            type="text"
+            onChange={this.handleChange}
+          />
+          <div class="input-group-append">
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={this.handleSubmit}
+            >
+              Add
+            </button>
+          </div>
+        </div>
       </form>
     );
   }

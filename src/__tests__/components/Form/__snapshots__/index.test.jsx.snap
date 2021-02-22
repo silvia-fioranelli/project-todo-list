@@ -2,16 +2,25 @@
 
 exports[`Form rendering should render text form 1`] = `
 <form>
-  <input
-    label="Add todo"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <button
-    onClick={[Function]}
+  <div
+    className="input-group mb-3"
   >
-    Add
-  </button>
+    <input
+      onChange={[Function]}
+      placeholder="write a reminder..."
+      type="text"
+      value=""
+    />
+    <div
+      class="input-group-append"
+    >
+      <button
+        className="btn btn-primary btn-sm"
+        onClick={[Function]}
+      >
+        Add
+      </button>
+    </div>
+  </div>
 </form>
 `;

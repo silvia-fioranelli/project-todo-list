@@ -1,19 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Todo rendering should render item 1`] = `
+exports[`Todo rendering should render item, completed 1`] = `
 <div>
   <button
+    className="btn btn-sm mt-1 mr-1"
     onClick={[Function]}
   >
-    Delete
+    <i
+      className="fa fa-trash"
+    />
   </button>
   <button
+    className="btn btn-sm mt-1 mr-3"
     onClick={[Function]}
   >
-    Toggle
+    <i
+      className="fa fa-undo"
+    />
   </button>
-  <p>
+  <span
+    style={
+      Object {
+        "textDecoration": "line-through",
+      }
+    }
+  >
     mock content
-  </p>
+  </span>
+</div>
+`;
+
+exports[`Todo rendering should render item, pending 1`] = `
+<div>
+  <button
+    className="btn btn-sm mt-1 mr-1"
+    onClick={[Function]}
+  >
+    <i
+      className="fa fa-trash"
+    />
+  </button>
+  <button
+    className="btn btn-sm mt-1 mr-3"
+    onClick={[Function]}
+  >
+    <i
+      className="fa fa-check-circle"
+    />
+  </button>
+  <span
+    style={
+      Object {
+        "textDecoration": "",
+      }
+    }
+  >
+    mock content
+  </span>
 </div>
 `;

@@ -11,9 +11,24 @@ export const Filter = (props) => {
   const { setCategory } = props;
   return (
     <div>
-      <button onClick={() => setCategory(CATEGORY_ALL)}>ALL</button>
-      <button onClick={() => setCategory(CATEGORY_PENDING)}>Pending</button>
-      <button onClick={() => setCategory(CATEGORY_COMPLETED)}>Completed</button>
+      <button
+        className="btn btn-primary btn-sm mr-1 mb-1"
+        onClick={() => setCategory(CATEGORY_ALL)}
+      >
+        All
+      </button>
+      <button
+        className="btn btn-primary btn-sm mr-1 mb-1"
+        onClick={() => setCategory(CATEGORY_PENDING)}
+      >
+        Pending
+      </button>
+      <button
+        className="btn btn-primary btn-sm mb-1"
+        onClick={() => setCategory(CATEGORY_COMPLETED)}
+      >
+        Completed
+      </button>
     </div>
   );
 };
