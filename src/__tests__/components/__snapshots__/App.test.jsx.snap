@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App rendering should render simple todo list 1`] = `
+<div
+  className="container"
+>
+  <h1>
+    TODO List
+  </h1>
+  <Form
+    onSubmit={[Function]}
+  />
+  <Filter
+    setCategory={[Function]}
+  />
+  <TodoList
+    deleteTodo={[Function]}
+    items={Array []}
+    toggleTodo={[Function]}
+  />
+</div>
+`;
