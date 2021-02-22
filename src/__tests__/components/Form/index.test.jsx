@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import Form from '../../../components/Form';
+import { Form, mapDispatch } from '../../../components/Form';
 
 describe('Form', () => {
   const defaultProps = {
@@ -20,8 +20,8 @@ describe('Form', () => {
       const wrapper = render();
       wrapper.instance().handleChange = jest.fn();
       // needed by enzyme to register mock callback
-      wrapper.instance().forceUpdate(); 
-      
+      wrapper.instance().forceUpdate();
+
       wrapper.find('input').simulate('change');
       expect(wrapper.instance().handleChange).toBeCalledTimes(1);
     });
@@ -30,8 +30,8 @@ describe('Form', () => {
       const wrapper = render();
       wrapper.instance().handleSubmit = jest.fn();
       // needed by enzyme to register mock callback
-      wrapper.instance().forceUpdate(); 
-      
+      wrapper.instance().forceUpdate();
+
       wrapper.find('button').simulate('click');
       expect(wrapper.instance().handleSubmit).toBeCalledTimes(1);
     });
@@ -75,6 +75,12 @@ describe('Form', () => {
       expect(props.onSubmit).toBeCalledTimes(1);
       expect(props.onSubmit).toBeCalledWith('mock');
       expect(instance.state.inputText).toEqual('');
+    });
+  });
+
+  describe('mapDispatch', () => {
+    test('should inject props', () => {
+      expect(mapDispatch).toHaveProperty('onSubmit');
     });
   });
 });

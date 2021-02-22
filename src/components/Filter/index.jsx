@@ -1,12 +1,19 @@
 import { func } from 'prop-types';
+import { connect } from 'react-redux';
+import { setCategory as setCategoryAlias } from '../../actions';
+import {
+  CATEGORY_ALL,
+  CATEGORY_COMPLETED,
+  CATEGORY_PENDING,
+} from '../../globals';
 
-const Filter = (props) => {
+export const Filter = (props) => {
   const { setCategory } = props;
   return (
     <div>
-      <button onClick={() => setCategory('')}>ALL</button>
-      <button onClick={() => setCategory('pending')}>Pending</button>
-      <button onClick={() => setCategory('completed')}>Completed</button>
+      <button onClick={() => setCategory(CATEGORY_ALL)}>ALL</button>
+      <button onClick={() => setCategory(CATEGORY_PENDING)}>Pending</button>
+      <button onClick={() => setCategory(CATEGORY_COMPLETED)}>Completed</button>
     </div>
   );
 };
@@ -15,4 +22,8 @@ Filter.propTypes = {
   setCategory: func.isRequired,
 };
 
-export default Filter;
+export const mapDispatch = {
+  setCategory: setCategoryAlias,
+};
+
+export default connect(null, mapDispatch)(Filter);
